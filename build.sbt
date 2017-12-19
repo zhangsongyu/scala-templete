@@ -35,6 +35,6 @@ libraryDependencies += "de.heikoseeberger" %% "akka-http-json4s" % "1.18.1"
 
 
 libraryDependencies += "com.typesafe.scala-logging" %% "scala-logging" % "3.7.2"
-libraryDependencies += "ch.qos.logback" % "logback-classic" % "1.2.3" % Test
+libraryDependencies += "ch.qos.logback" % "logback-classic" % "1.2.3"
 
 

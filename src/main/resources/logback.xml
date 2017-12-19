@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration scan="true" scanPeriod="60 seconds" debug="false">
     <property name="LOG_HOME" value="logs"/>
-    <property name="appName" value="itoaAuthorization"/>
+    <property name="appName" value="scalaTemplete"/>
 
     <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
         <file>${LOG_HOME}/${appName}.log</file>
@@ -33,6 +33,11 @@
             <totalSizeCap>5GB</totalSizeCap>
         </rollingPolicy>
     </appender>
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
     <logger name="logger.org.jdbcdslog.StatementLogger" level="WARNING"/>
     <logger name="LogbackIntegrationIT" additivity="false" level="WARNING"/>
     <logger name="application" level="INFO"/>
@@ -40,8 +45,10 @@
     <logger name="org.apache.kafka.clients.consumer.ConsumerConfig" level="ERROR"/>
     <logger name="slick.jdbc.JdbcBackend.statement" level="INFO"/>
     <logger name="akka.event.slf4j.Slf4jEventHandler" level="ERROR"/>
+    <logger name="com.templete.squirrel.service" level="INFO"></logger>
     <root level="INFO">
         <appender-ref ref="FILE"/>
         <appender-ref ref="file-error"/>
+        <appender-ref ref="STDOUT"/>
     </root>
 </configuration>
