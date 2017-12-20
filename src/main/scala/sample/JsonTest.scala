@@ -110,7 +110,7 @@ object JsonExample extends App {
   println()
 
 }
-case class Color(name: String, red: Int, green: Int, blue: Int)
+case class Color(name: String, red: Long, green: Long, blue: Long)
 
 object TestBird {
 
