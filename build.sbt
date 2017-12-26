@@ -2,11 +2,15 @@ name := "scala-templete"
 
 version := "0.1"
 
-scalaVersion := "2.12.4"
+scalaVersion := "2.11.11"
 
 lazy val akkaVersion = "2.5.8"
-lazy val akkaHttpVersion="10.0.11"
+lazy val akkaHttpVersion = "10.0.11"
 lazy val slickVersion = "3.2.1"
+
+
+resolvers += "aliyun repositories" at "http://maven.aliyun.com/nexus/content/repositories/central/"
+resolvers += Resolver.mavenLocal
 
 libraryDependencies ++= Seq(
   "com.typesafe.akka" %% "akka-actor" % akkaVersion,
@@ -37,7 +41,6 @@ libraryDependencies += "de.heikoseeberger" %% "akka-http-json4s" % "1.18.1"
 libraryDependencies += "com.typesafe.scala-logging" %% "scala-logging" % "3.7.2"
 libraryDependencies += "ch.qos.logback" % "logback-classic" % "1.2.3"
 
-// Add the ScalaMock library (versions 4.0.0 onwards)
-libraryDependencies += "org.scalamock" %% "scalamock" % "4.0.0" % Test
-// also add ScalaTest as a framework to run the tests
-libraryDependencies += "org.scalatest" %% "scalatest" % "3.0.4" % Test
+libraryDependencies += "org.apache.spark" %% "spark-core" % "2.2.0"
+libraryDependencies += "org.apache.spark" %% "spark-sql" % "2.2.0"
+//-Dspark.master=local
