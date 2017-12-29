@@ -46,6 +46,11 @@ class TestRoute extends JsonFormats {
               }
             }
           }
+        } ~
+        path("getconf") {
+          get {
+            complete(new TestService().getRedisConf)
+          }
         }
     }
 }

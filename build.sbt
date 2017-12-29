@@ -18,6 +18,8 @@ libraryDependencies ++= Seq(
   "org.scalatest" %% "scalatest" % "3.0.1" % "test"
 )
 
+libraryDependencies += "junit" % "junit" % "4.12" % Test
+
 libraryDependencies ++= Seq(
   "com.typesafe.slick" %% "slick" % slickVersion,
   "org.slf4j" % "slf4j-nop" % "1.6.4",
@@ -44,3 +46,7 @@ libraryDependencies += "ch.qos.logback" % "logback-classic" % "1.2.3"
 libraryDependencies += "org.apache.spark" %% "spark-core" % "2.2.0"
 libraryDependencies += "org.apache.spark" %% "spark-sql" % "2.2.0"
 //-Dspark.master=local
+
+libraryDependencies ++= Seq(
+  "net.debasishg" %% "redisclient" % "3.4"
+)
