@@ -14,11 +14,11 @@ resolvers += Resolver.mavenLocal
 
 libraryDependencies ++= Seq(
   "com.typesafe.akka" %% "akka-actor" % akkaVersion,
-  "com.typesafe.akka" %% "akka-testkit" % akkaVersion % Test,
-  "org.scalatest" %% "scalatest" % "3.0.1" % "test"
+  "com.typesafe.akka" %% "akka-testkit" % akkaVersion,
+  "org.scalatest" %% "scalatest" % "3.0.1"
 )
 
-libraryDependencies += "junit" % "junit" % "4.12" % Test
+libraryDependencies += "junit" % "junit" % "4.12"
 
 libraryDependencies ++= Seq(
   "com.typesafe.slick" %% "slick" % slickVersion,
@@ -30,11 +30,11 @@ libraryDependencies += "mysql" % "mysql-connector-java" % "5.1.41"
 
 libraryDependencies ++= Seq(
   "com.typesafe.akka" %% "akka-stream" % akkaVersion,
-  "com.typesafe.akka" %% "akka-stream-testkit" % akkaVersion % Test
+  "com.typesafe.akka" %% "akka-stream-testkit" % akkaVersion
 )
 libraryDependencies ++= Seq(
   "com.typesafe.akka" %% "akka-http" % akkaHttpVersion,
-  "com.typesafe.akka" %% "akka-http-testkit" % akkaHttpVersion % Test
+  "com.typesafe.akka" %% "akka-http-testkit" % akkaHttpVersion
 )
 libraryDependencies += "org.json4s" %% "json4s-native" % "3.5.2"
 libraryDependencies += "de.heikoseeberger" %% "akka-http-json4s" % "1.18.1"
@@ -50,3 +50,6 @@ libraryDependencies += "org.apache.spark" %% "spark-sql" % "2.2.0"
 libraryDependencies ++= Seq(
   "net.debasishg" %% "redisclient" % "3.4"
 )
+
+libraryDependencies += "io.spray" %% "spray-json" % "1.3.2"
+libraryDependencies += "org.quartz-scheduler" % "quartz" % "2.3.0"

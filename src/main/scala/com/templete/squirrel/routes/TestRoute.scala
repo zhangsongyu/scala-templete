@@ -6,13 +6,14 @@ import akka.http.scaladsl.model._
 import akka.http.scaladsl.server.Directives._
 import com.templete.squirrel.common.JsonFormats
 import com.templete.squirrel.service.streaming.TestService
+import com.templete.squirrel.util.CronUril
 import com.typesafe.scalalogging.Logger
 import de.heikoseeberger.akkahttpjson4s.Json4sSupport._
 
 class TestRoute extends JsonFormats {
   private[this] val logger = Logger(this.getClass)
   val route =
-    pathPrefix("itoa") {
+    pathPrefix("st") {
       path("hello") {
         get {
           { ctx => ctx.complete(HttpEntity(ContentTypes.`text/html(UTF-8)`, "<h1>Say hello to akka-http</h1>")) }
@@ -50,6 +51,13 @@ class TestRoute extends JsonFormats {
         path("getconf") {
           get {
             complete(new TestService().getRedisConf)
+          }
+        } ~
+        path("cron") {
+          get {
+            parameter('cron.as[String]) { c =>
+              complete(CronUril.getRunTimes(c,Some(5)))
+            }
           }
         }
     }
