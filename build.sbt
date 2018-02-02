@@ -38,6 +38,7 @@ libraryDependencies ++= Seq(
 )
 libraryDependencies += "org.json4s" %% "json4s-native" % "3.5.2"
 libraryDependencies += "de.heikoseeberger" %% "akka-http-json4s" % "1.18.1"
+libraryDependencies += "de.heikoseeberger" %% "akka-http-jackson" % "1.18.1"
 
 
 libraryDependencies += "com.typesafe.scala-logging" %% "scala-logging" % "3.7.2"
