@@ -54,3 +54,7 @@ libraryDependencies ++= Seq(
 
 libraryDependencies += "io.spray" %% "spray-json" % "1.3.2"
 libraryDependencies += "org.quartz-scheduler" % "quartz" % "2.3.0"
+
+//kafka
+libraryDependencies += "org.apache.kafka" % "kafka-clients" % "1.0.0"
+libraryDependencies += "org.apache.kafka" % "kafka-streams" % "1.0.0"

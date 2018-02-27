@@ -40,15 +40,36 @@ class SimpleTest {
   def ttt: Unit = {
 
     List(0) match {
-      case Nil=>
+      case Nil =>
         println("nil")
-      case _ ::_=>
+      case _ :: _ =>
         println("::")
     }
 
-    val lli=List(List(0,1,2,3))
-   val res= lli.flatMap(_.map(_+1))
+    val lli = List(List(0, 1, 2, 3))
+    val res = lli.flatMap(_.map(_ + 1))
     println()
 
+
+    val BookExtractorRE = """Book: title=([^,]+),\s+author=(.+)""".r //   val MagazineExtractorRE = """Magazine: title=([^,]+),\s+issue=(.+)""".r
+    val catalog = Seq(
+      "Book: title=Programming Scala Second Edition, author=Dean Wampler",
+      "Magazine: title=The New Yorker, issue=January 2014",
+      "Unknown: text=Who put this here??"
+    )
+    for (item <- catalog) {
+      item match {
+        case BookExtractorRE(title, author) =>
+          println(s"""Book "$title", written by $author""")
+        case entry => println(s"Unrecognized entry: $entry")
+      }
+    }
+    BookExtractorRE
+      .unapplySeq("Book: title=Programming Scala" +
+        " Second Edition, author=Dean Wampler")
   }
+
+  case class H(i: Int)
+
+  val h = H(0).copy()
 }
