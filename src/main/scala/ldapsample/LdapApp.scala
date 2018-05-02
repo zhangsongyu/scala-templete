@@ -1,0 +1,5 @@
+package ldapsample
+
+class LdapApp {
+
+}
